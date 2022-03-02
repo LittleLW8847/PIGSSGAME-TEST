@@ -233,6 +233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e8bb24cc6c0f04f9f9f9d21e70489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
+  mainElement: 5
+  mainRank: 15
+  mainColor: 5
 --- !u!4 &407267127
 Transform:
   m_ObjectHideFlags: 0
@@ -520,6 +524,7 @@ GameObject:
   - component: {fileID: 1105208192}
   - component: {fileID: 1105208194}
   - component: {fileID: 1105208193}
+  - component: {fileID: 1105208195}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -587,6 +592,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105208191}
   m_CullTransparentMesh: 1
+--- !u!114 &1105208195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105208191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27fef74843853d44082186db6982d16d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayColor: {fileID: 0}
+  displayRank: {fileID: 0}
+  displyelemet: {fileID: 0}
 --- !u!1 &1118946189
 GameObject:
   m_ObjectHideFlags: 0

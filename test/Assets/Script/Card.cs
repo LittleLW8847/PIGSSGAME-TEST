@@ -1,11 +1,10 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class Card
 {
-    public int cardID;  //not really know what to do with this variable, but could be handy for identified cards
-
     public int cardElement = 0; // 1: Fire/ 2: Water/ 3: Earth 4: Thunder/ 5: DARK 
     public int cardColor = 0;   // 1: Red/ 2: Blue/ 3: Brown/ 4: Yellow/ 5: urple 
     public int cardRank;
@@ -19,9 +18,8 @@ public class Card : MonoBehaviour
         Card card = new Card();
     }
 
-    public Card(int ID, int element, int colour, int rank)
+    public Card(int element, int colour, int rank)
     {
-        this.cardID = ID;
         this.cardElement = element;
         this.cardColor = colour;
         this.cardRank = rank;
@@ -61,6 +59,13 @@ public class Card : MonoBehaviour
             case 14: this.rankRead = "T"; break;
             case 15: this.rankRead = "D"; break;
         }
+    }
+
+    public void displayInfo()
+    {
+        Console.WriteLine("Card Color: " + colorRead);
+        Console.WriteLine("Card Element:" + elementRead);
+        Console.WriteLine("Card Rank:" + rankRead);
     }
 
     /*// Start is called before the first frame update
