@@ -1,8 +1,6 @@
 using System.Collections;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 public class GameManager : MonoBehaviour
 {
@@ -16,33 +14,32 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Console.Write("test");   
+        Debug.Log("test");
+        deckGenerator();
     }
 
     // Update is called once per frame
     void Update()
     {
-        deckGenerator();
+
     }
 
     public void deckGenerator()         //for generating card in the deck.
     {
         int ID = 0;
         int cardsAmount = mainElement * mainColor * mainElement;
-        for(int colorcount = 1; colorcount <= mainColor; colorcount++)
+        for (int colorcount = 1; colorcount <= mainColor; colorcount++)
         {
-           for(int elementcount = 1; elementcount <= mainElement; elementcount++)
+            for (int elementcount = 1; elementcount <= mainElement; elementcount++)
             {
-                for(int rankcount = 1; rankcount <= mainRank; rankcount++)
+                for (int rankcount = 1; rankcount <= mainRank; rankcount++)
                 {
                     deck.Add(new Card(elementcount, colorcount, rankcount));
-                    Console.WriteLine("Card Color: " + deck[ID].colorRead);
-                    Console.WriteLine("Card Element:" + deck[ID].elementRead);
-                    Console.WriteLine("Card Rank:" + deck[ID].rankRead);
-                    Console.WriteLine("----------------------------------------------------------------");
+                    Debug.Log("Card Color: " + deck[ID].colorRead + " Card Element:" + deck[ID].elementRead+ " Card Rank:" + deck[ID].rankRead);
+                    Debug.Log("----------------------------------------------------------------");
+                    ID++;
                 }
             }
-        }               
+        }
     }
-
 }
