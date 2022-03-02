@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public List<Card> deck = new List<Card>;//deck
+    public List<Card> deck = new List<Card>();//deck
 
     [SerializeField]
     public int mainElement = 5;//amount of element in game
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void deckGenerator()
+    public void deckGenerator()         //for generating card in the deck.
     {
         int cardsAmount = mainElement * mainColor * mainElement;
         int elementcount = 1;
@@ -35,10 +35,13 @@ public class GameManager : MonoBehaviour
                 deck.Add(new Card(i, elementcount, elementcount, rankCount)); ;
                 rankCount++;
             }
-            rankCount = 1;
-            elementcount++;
+            if(i == elementcount * mainRank - 1) //reset rank and change both color and elementevery time after finish generate all the rank
+            {                                    //for the element.
+                rankCount = 1;                      
+                elementcount++;
+            }
+            
         }
-
-        
+               
     }
 }
