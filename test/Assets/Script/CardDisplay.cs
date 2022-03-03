@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
 {
-    Card cardInQuesiton; //reference to specific card to be displayed.
+    Card cardTarget; //reference to specific card to be displayed.
 
     public Text displayColor;
     public Text displayRank;
-    public Text displyelemet;
+    public Text displayelemet;
 
 
 
@@ -23,5 +23,12 @@ public class CardDisplay : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void CardReder(Card targetCard)
+    {
+        displayColor.text = cardTarget.colorRead;
+        displayRank.text = cardTarget.rankRead;
+        displayelemet.text = cardTarget.elementRead;
     }
 }

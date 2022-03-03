@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void deckGenerator()         //for generating card in the deck.
     {
-        int ID = 0;
+        //int ID = 0;
         int cardsAmount = mainElement * mainColor * mainElement;
         for (int colorcount = 1; colorcount <= mainColor; colorcount++)
         {
@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
                 for (int rankcount = 1; rankcount <= mainRank; rankcount++)
                 {
                     deck.Add(new Card(elementcount, colorcount, rankcount));
-                    Debug.Log("Card Color: " + deck[ID].colorRead + " Card Element:" + deck[ID].elementRead+ " Card Rank:" + deck[ID].rankRead);
+                    /*Debug.Log("Card Color: " + deck[ID].colorRead + " Card Element:" + deck[ID].elementRead+ " Card Rank:" + deck[ID].rankRead);
                     Debug.Log("----------------------------------------------------------------");
-                    ID++;
+                    ID++;*/
                 }
             }
         }
