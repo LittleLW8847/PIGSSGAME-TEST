@@ -25,10 +25,15 @@ public class CardDisplay : MonoBehaviour
         
     }
 
-    public void CardReder(Card targetCard)
+    public void CardReder(Card targetCard)//read card information for displaying
     {
         displayColor.text = cardTarget.colorRead;
         displayRank.text = cardTarget.rankRead;
         displayelemet.text = cardTarget.elementRead;
+    }
+
+    public void cardRenderer()
+    {
+
     }
 }
