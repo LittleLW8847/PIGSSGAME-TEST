@@ -5,35 +5,41 @@ using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
 {
-    Card cardTarget; //reference to specific card to be displayed.
+    public List<Card> cardTarget = new List<Card>(); //reference to specific card to be displayed.
+
+    public int tempInt;
+    public string tempElement;
+    public string tempRank;
+    public string tempColor;
 
     public Text displayColor;
     public Text displayRank;
     public Text displayelemet;
+    public Image cardTemplate;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //read card information from link list.
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void CardReder(Card targetCard)//read card information for displaying
+    public void cardReader(Card card)
     {
-        displayColor.text = cardTarget.colorRead;
-        displayRank.text = cardTarget.rankRead;
-        displayelemet.text = cardTarget.elementRead;
-    }
+        tempInt = card.cardID;
+        tempElement = card.elementRead;
+        tempRank = card.rankRead;
+        tempColor = card.colorRead;
 
-    public void cardRenderer()
-    {
-
+        displayColor.text = tempColor;
+        displayelemet.text = tempElement;
+        displayRank.text = tempRank;
     }
 }

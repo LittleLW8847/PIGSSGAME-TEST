@@ -1,16 +1,23 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class Card
+public class Card: ScriptableObject
 {
+    public int cardID;
     public int cardElement = 0; // 1: Fire/ 2: Water/ 3: Earth 4: Thunder/ 5: DARK 
     public int cardColor = 0;   // 1: Red/ 2: Blue/ 3: Brown/ 4: Yellow/ 5: urple 
     public int cardRank;
     public string elementRead;
     public string colorRead;
     public string rankRead;
+    public bool deckActive;
+    public bool handActive;
+    public bool isPlayed;
+
+    public Image cardTemplate;
 
     public Card()
     {
@@ -18,8 +25,9 @@ public class Card
         Card card = new Card();
     }
 
-    public Card(int element, int colour, int rank)
+    public Card(int id, int element, int colour, int rank)
     {
+        this.cardID = id;
         this.cardElement = element;
         this.cardColor = colour;
         this.cardRank = rank;
@@ -59,6 +67,8 @@ public class Card
             case 14: this.rankRead = "T"; break;
             case 15: this.rankRead = "D"; break;
         }
+        deckActive = true;
+        handActive = false;
     }
 
     public void displayInfo()
